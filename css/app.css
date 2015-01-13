@@ -1,0 +1,66 @@
+/* GAMBIARRA, DO YOU SPEAK IT? */
+
+#url-list li.with-input {
+  padding: 0px;
+}
+
+#url-list li {
+  position: relative;
+  border:none;
+}
+
+#url-list li.with-input .form-control {
+  background: none;
+  box-shadow: none;
+}
+
+#url-list li.with-input:not(:first-child) .form-control {
+  border-radius: 0px;
+}
+
+#url-list li.with-input:first-child .form-control {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+#url-list li.with-input button.remove {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+
+#url-list li.with-input:not(:first-child) button.remove {
+  border-radius: 0px;
+}
+
+#url-list li.with-input:first-child button.remove {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+#url-list li.with-input .form-control:focus {
+  box-shadow: none;
+  background: none;
+  border: 1px solid #ccc;
+  border-left: 3px solid #5bc0de;
+}
+
+#url-list li.footer {
+  border:none;
+}
+
+#url-list li.footer .btn-group {
+  width: 100%;
+}
+
+#url-list li.footer .btn-group .btn {
+  width: 50%;
+}
+
+#url-list li:last-child:not(:first-child) button {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+
+}

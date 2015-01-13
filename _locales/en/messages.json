@@ -1,0 +1,14 @@
+{
+  "index_alert": {
+    "message": "Attention: triple check urls before save, you have been warned. Triple check urls before save, you have been warned. Triple check urls before save, you have been warned trice."
+  },
+  "index_save": {
+    "message": "Save"
+  },
+  "index_more": {
+    "message": "More"
+  },
+  "url_match_docs": {
+    "message": "You should follow these <a target=\"_blank\" href=\"https://developer.chrome.com/extensions/match_patterns\">standards</a>"
+  }
+}

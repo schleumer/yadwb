@@ -1,0 +1,24 @@
+{  
+  "manifest_version": 2,
+  "name":"Stop Procrastinating",
+  "version":"6.6.6",
+  "description":"lel",
+  "default_locale": "en",
+  "author":"Wesley Schleumer de Góes",
+  "background": {
+    "persistent": true,
+    "page": "background.html"
+  },
+  "browser_action": {
+    "default_title": "unicode chars",
+    "default_popup": "popup.html",
+    "default_icon": "icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "*://*/*"
+  ]
+}

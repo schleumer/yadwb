@@ -1,0 +1,23 @@
+<html ng-csp ng-app="StopProcrastinating">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/angular-csp.css">
+  <script type="text/javascript" src="js/underscore.js"></script>
+  <!-- AINNNNNNNNNNN ELE TA USANDO UMA BAZZOKA PRA MATAR UMA MOOOOOOOOOOOOSCA -->
+  <!-- olha aqui, queridinha, ᶠᵒᵈᵃ⁻ˢᵉ, olha eu me importando com você: -->
+  <script type="text/javascript" src="js/angular.min.js"></script>
+  <script type="text/javascript" src="js/angular-route.min.js"></script>
+  <script type="text/javascript" src="js/popup.js"></script>
+</head>
+<body>
+  <div style="width:400px;padding:8px;">
+    <div ng-view></div>
+    <div class="alert alert-info">
+      {{ getMessage('index_alert') }}
+    </div>
+  </div>
+</body>
+</html>

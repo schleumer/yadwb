@@ -1,0 +1,20 @@
+<div>
+  <div class="alert alert-info" ng-bind="message" ng-show="message"></div>
+  <ul class="list-group" id="url-list">
+    <li class="list-group-item with-input" ng-repeat="item in urls">
+      <input type="text" ng-model="item.url" class="form-control" />
+      <button type="button" ng-click="removeUrl(item)" class="btn btn-warning remove">&times;</button>
+    </li>
+    <li class="list-group-item footer" style="padding:0;">
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" style="margin:0" ng-click="moreUrl()">
+          {{ getMessage('index_more') }}
+        </button>
+        <button type="button" class="btn btn-info" style="margin:0" ng-click="saveUrls()">
+          {{ getMessage('index_save') }}
+        </button>
+      </div>
+    </li>
+  </ul>
+  <div class="well well-sm" ng-bind-html="getMessage('url_match_docs')"></div>
+</div>
