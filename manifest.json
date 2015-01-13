@@ -1,10 +1,15 @@
 {  
   "manifest_version": 2,
   "name":"Stop Procrastinating",
-  "version":"6.6.6",
-  "description":"lel",
+  "version":"0.0.1",
+  "description":"Stop Procrastinating helps you to not engage in distractive websites",
   "default_locale": "en",
   "author":"Wesley Schleumer de Góes",
+  "icons": { 
+    "16": "icon128.png",
+    "48": "icon128.png",
+    "128": "icon128.png"
+  },
   "background": {
     "persistent": true,
     "page": "background.html"
