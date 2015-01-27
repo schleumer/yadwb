@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "YADWB - Yet Another Distractive Websites Blocker"
+    "message": "YADWB"
   },
   "extDescription": {
-    "message": "YADWB helps you to not engage in distractive websites"
+    "message": "YADWB(Yet Another Distractive Websites Blocker) helps you to not engage in distractive websites"
   },
   "index_alert": {
     "message": "Attention: triple check urls before save, you have been warned. Triple check urls before save, you have been warned. Triple check urls before save, you have been warned trice."

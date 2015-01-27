@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "YADWB - Yet Another Distractive Websites Blocker"
+    "message": "YADWB"
   },
   "extDescription": {
-    "message": "YADWB ajuda você a não cair na armadilha de sites distrativos, principalmente aqueles que possuem gatinhos super fofos."
+    "message": "YADWB(Yet Another Distractive Websites Blocker) ajuda você a não cair na armadilha de sites distrativos, principalmente aqueles que possuem gatinhos super fofos."
   },
   "index_alert": {
     "message": "Atenção: cheque 3 vezes as URLs antes de você salvar, você foi avisado. Cheque 3 vezes as URLs antes de você salvar, você foi avisado. Cheque 3 vezes as URLs antes de você salvar, você foi avisado 3 vezes."
