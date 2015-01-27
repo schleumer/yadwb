@@ -1,5 +1,4 @@
 // AINNNNNNNNNNN ELE TA USANDO UMA BAZZOKA PRA MATAR UMA MOOOOOOOOOOOOSCA
-// olha aqui, queridinha, ᶠᵒᵈᵃ⁻ˢᵉ, olha eu me importando com você:
 
 var app = angular.module('StopProcrastinating', ['ngRoute']);
 
