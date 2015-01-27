@@ -1,19 +1,17 @@
 // set default URLs for first run
-var defaultUrls = [
-  {
-    "url": "*://*.facebook.com/*"
-  }, {
-    "url": "*://facebook.com/*"
-  }, {
-    "url": "*://9gag.com/*"
-  }, {
-    "url": "*://*.9gag.com/*"
-  }, {
-    "url": "*://*.twitter.com/*"
-  }, {
-    "url": "*://twitter.com/*"
-  }
-];
+var defaultUrls = [{
+  "url": "*://*.facebook.com/*"
+}, {
+  "url": "*://facebook.com/*"
+}, {
+  "url": "*://9gag.com/*"
+}, {
+  "url": "*://*.9gag.com/*"
+}, {
+  "url": "*://*.twitter.com/*"
+}, {
+  "url": "*://twitter.com/*"
+}];
 
 var requestHolder = {};
 
@@ -24,36 +22,44 @@ var listener = function(details) {
   // sweep the dirty under the carpet
   // TODO: >implying all requests ends here
   delete requestHolder[details.requestId];
-  if(details.type === "sub_frame") {
+  if (details.type === "sub_frame") {
     return;
   }
-  if(details.type === "main_frame") {
-    var checkReferer = headers.filter(function(header){
+  if (details.type === "main_frame") {
+    var checkReferer = headers.filter(function(header) {
       return header.name == "Referer";
     }).length;
-    if(checkReferer < 1) {
+    if (checkReferer < 1) {
       return {
-        redirectUrl: chrome.extension.getURL('block.html')
-          + "?request="
-          // maybe it will explode in a future
-          // lucky it's not future
-          + encodeURIComponent(JSON.stringify(details))
+        redirectUrl: chrome.extension.getURL('block.html') + "?request="
+        // maybe it will explode in a future
+        // lucky it's not future
+        + encodeURIComponent(JSON.stringify(details))
       };
     }
   }
 };
 
+var basedListener = function(details) {
+  // ayy lmao, relax, it's just processed when URL matches :)
+  requestHolder[details.requestId] = details.requestHeaders;
+};
+
 // global(nnnnggggggg) listener updater
-window.updateListener = function(callsaul){
+window.updateListener = function(callsaul) {
   // detach listeners if there's some
-  if(chrome.webRequest.onHeadersReceived.hasListener(listener)){
+  if (chrome.webRequest.onHeadersReceived.hasListener(listener)) {
     chrome.webRequest.onHeadersReceived.removeListener(listener);
+  }
+
+  if (chrome.webRequest.onBeforeSendHeaders.hasListener(basedListener)) {
+    chrome.webRequest.onBeforeSendHeaders.removeListener(basedListener);
   }
 
   // get URLs from storage
   chrome.storage.sync.get('urls', function(data) {
     // check if it's a array, if use defaultUrls as first run data
-    if(!_.isArray(data.urls)) {
+    if (!_.isArray(data.urls)) {
       chrome.storage.sync.set({
         urls: defaultUrls
       }, function() {
@@ -64,7 +70,7 @@ window.updateListener = function(callsaul){
     }
 
     // if it's empty, we will not waste our time on this
-    if(_.isEmpty(data.urls)) {
+    if (_.isEmpty(data.urls)) {
       return;
     }
 
@@ -73,14 +79,19 @@ window.updateListener = function(callsaul){
     // using urls as filter, no RegExp for slow down requests.
     chrome.webRequest
       .onHeadersReceived
-      .addListener(listener, { urls: urls.map(function(v){ return v.url; }) }, ["blocking", "responseHeaders"]);
+      .addListener(listener, {
+        urls: urls.map(function(v) {
+          return v.url;
+        })
+      }, ["blocking", "responseHeaders"]);
 
     chrome.webRequest
       .onBeforeSendHeaders
-      .addListener(function(details) {
-        // ayy lmao, relax, it's just processed when URL matches :)
-        requestHolder[details.requestId] = details.requestHeaders;
-      }, {urls: urls.map(function(v){ return v.url; })}, ["requestHeaders"])
+      .addListener(basedListener, {
+        urls: urls.map(function(v) {
+          return v.url;
+        })
+      }, ["requestHeaders"])
 
     if (callsaul) {
       callsaul();
