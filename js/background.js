@@ -15,23 +15,39 @@ var defaultUrls = [
   }
 ];
 
+var requestHolder = {};
 
-// listener called by `onBeforeRequest`
+// listener called by `onHeadersReceived`
 var listener = function(details) {
-  return {
-    redirectUrl: chrome.extension.getURL('block.html')
-      + "?request="
-      // maybe it will explode in a future
-      // lucky it's not future
-      + encodeURIComponent(JSON.stringify(details))
-  };
+  // ishygddt
+  headers = requestHolder[details.requestId];
+  // sweep the dirty under the carpet
+  // TODO: >implying all requests ends here
+  delete requestHolder[details.requestId];
+  if(details.type === "sub_frame") {
+    return;
+  }
+  if(details.type === "main_frame") {
+    var checkReferer = headers.filter(function(header){
+      return header.name == "Referer";
+    }).length;
+    if(checkReferer < 1) {
+      return {
+        redirectUrl: chrome.extension.getURL('block.html')
+          + "?request="
+          // maybe it will explode in a future
+          // lucky it's not future
+          + encodeURIComponent(JSON.stringify(details))
+      };
+    }
+  }
 };
 
 // global(nnnnggggggg) listener updater
 window.updateListener = function(callsaul){
   // detach listeners if there's some
-  if(chrome.webRequest.onBeforeRequest.hasListener(listener)){
-    chrome.webRequest.onBeforeRequest.removeListener(listener);
+  if(chrome.webRequest.onHeadersReceived.hasListener(listener)){
+    chrome.webRequest.onHeadersReceived.removeListener(listener);
   }
 
   // get URLs from storage
@@ -53,11 +69,18 @@ window.updateListener = function(callsaul){
     }
 
     urls = data.urls;
-    // attach the listener into `onBeforeRequest` 
+    // attach the listener into `onHeadersReceived` 
     // using urls as filter, no RegExp for slow down requests.
     chrome.webRequest
-      .onBeforeRequest
-      .addListener(listener, { urls: urls.map(function(v){ return v.url; }) }, ["blocking"]);
+      .onHeadersReceived
+      .addListener(listener, { urls: urls.map(function(v){ return v.url; }) }, ["blocking", "responseHeaders"]);
+
+    chrome.webRequest
+      .onBeforeSendHeaders
+      .addListener(function(details) {
+        // ayy lmao, relax, it's just processed when URL matches :)
+        requestHolder[details.requestId] = details.requestHeaders;
+      }, {urls: urls.map(function(v){ return v.url; })}, ["requestHeaders"])
 
     if (callsaul) {
       callsaul();

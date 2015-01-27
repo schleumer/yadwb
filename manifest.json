@@ -1,7 +1,7 @@
 {  
   "manifest_version": 2,
   "name":"__MSG_extName__",
-  "version":"0.0.1",
+  "version":"0.0.3",
   "description":"__MSG_extDescription__",
   "default_locale": "en",
   "author":"Wesley Schleumer de Góes",
@@ -25,6 +25,6 @@
     "tabs",
     "webRequest",
     "webRequestBlocking",
-    "*://*/*"
+    "<all_urls>"
   ]
 }
