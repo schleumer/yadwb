@@ -1,0 +1,47 @@
+{
+  "extName": {
+    "message": "Não Perca Tempo"
+  },
+  "extDescription": {
+    "message": "Não Perca Tempo ajuda você a não cair na armadilha de sites distrativos, principalmente aqueles que possuem gatinhos super fofos."
+  },
+  "index_alert": {
+    "message": "Atenção: cheque 3 vezes as URLs antes de você salvar, você foi avisado. Cheque 3 vezes as URLs antes de você salvar, você foi avisado. Cheque 3 vezes as URLs antes de você salvar, você foi avisado 3 vezes."
+  },
+  "index_save": {
+    "message": "Salvar"
+  },
+  "index_more": {
+    "message": "Adicionar URL"
+  },
+  "urls_saved": {
+    "message": "Salvo"
+  },
+  "url_match_docs": {
+    "message": "Você deve seguir os padrões de filtragem <a target=\"_blank\" href=\"https://developer.chrome.com/extensions/match_patterns\">nesse site</a>"
+  },
+  "default_waste_message": {
+    "message": "<h4 style=\"font-size:40px;line-height:60px;\">Você acessou <br /><b >:url:</b></br /> e tá achando que tem tempo pra ficar<br /> nesse site?</h4>"
+  },
+  "waste_message_info": {
+    "message": "<b>:url:</b> sera trocado pela URL do site que você tentou visitar."
+  },
+  "waste_message_save_button": {
+    "message": "Salvar Texto"
+  },
+  "waste_message_header": {
+    "message": "Escreva uma mensagem carinhosa:"
+  },
+  "waste_message_saved": {
+    "message": "Texto Salvo"
+  },
+  "clean_settings": {
+    "message": "Resetar Configurações"
+  },
+  "clean_settings_sure": {
+    "message": "Tem certeza disso?"
+  },
+  "donate_message": {
+    "message": "Achou a extensão legal? <br /> Doe uma moedinha para o café:"
+  }
+}

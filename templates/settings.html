@@ -1,0 +1,39 @@
+<div>
+  <div class="alert alert-info" ng-bind="message" ng-show="message"></div>
+  <ul class="list-group" id="url-list">
+    <li class="list-group-item with-input" ng-repeat="item in urls">
+      <input type="text" ng-model="item.url" class="form-control" />
+      <button type="button" ng-click="removeUrl(item)" class="btn btn-warning remove">&times;</button>
+    </li>
+    <li class="list-group-item footer" style="padding:0;">
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" style="margin:0" ng-click="moreUrl()">
+          {{ getMessage('index_more') }}
+        </button>
+        <button type="button" class="btn btn-info" style="margin:0" ng-click="saveUrls()">
+          {{ getMessage('index_save') }}
+        </button>
+      </div>
+    </li>
+  </ul>
+  <div class="well well-sm" ng-bind-html="getMessage('url_match_docs')"></div>
+  <h4 ng-bind-html="getMessage('waste_message_header')"></h4>
+  <div class="row-fluid" style="margin-bottom:20px;">
+    <editor ng-model="wasteMessage"></editor>
+  </div>
+  <div class="row-fluid" style="margin-bottom:20px;">
+    <div class="pull-right">
+      <div ng-show="wasteMessageAlert" class="alert alert-info alert-xs pull-left alert-float" ng-bind-html="wasteMessageAlert"></div>
+      <button class="btn btn-primary pull-left" ng-click="saveMessage()" ng-bind-html="getMessage('waste_message_save_button')"></button>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="alert alert-info" ng-bind-html="getMessage('waste_message_info')"></div>
+
+  <div class="row-fluid" style="margin-bottom:20px;">
+    <div class="pull-right">
+      <button class="btn btn-danger pull-left" ng-click="cleanSettings()" ng-bind-html="getMessage('clean_settings')"></button>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-csp ng-app="StopProcrastinatingSettings">
+<head>
+  <meta charset="UTF-8">
+  <!-- -->
+  <link rel="stylesheet" href="vendor/css/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/css/angular-csp.css">
+  <!-- here comes the bloat -->
+  <link rel="stylesheet" href="vendor/css/font-awesome.min.css">
+  <link rel="stylesheet" href="vendor/css/summernote.min.css">
+  <!-- -->
+  <link rel="stylesheet" href="css/app.css">
+  <!-- MOAR bloat -->
+  <script type="text/javascript" src="vendor/js/jquery.min.js"></script>
+  <script type="text/javascript" src="vendor/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="vendor/js/underscore.min.js"></script>
+  <script type="text/javascript" src="vendor/js/summernote.min.js"></script>
+  <!-- AINNNNNNNNNNN ELE TA USANDO UMA BAZZOKA PRA MATAR UMA MOOOOOOOOOOOOSCA -->
+  <!-- olha aqui, queridinha, ᶠᵒᵈᵃ⁻ˢᵉ, olha eu me importando com você: -->
+  <script type="text/javascript" src="vendor/js/angular.min.js"></script>
+  <script type="text/javascript" src="vendor/js/angular-route.min.js"></script>
+  <!-- -->
+  <script type="text/javascript" src="js/settings.js"></script>
+</head>
+<body style="padding-top:40px;">
+  <div class="container">
+    <div class="col-xs-8 col-xs-offset-2">
+      <div ng-view></div>
+      <div class="alert alert-info">
+        {{ getMessage('index_alert') }}
+      </div>
+    </div>
+  </div>
+</body>
+</html>

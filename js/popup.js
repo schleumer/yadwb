@@ -36,7 +36,7 @@ app.controller('IndexCtrl', ['$scope', function($scope){
       // pode fazer pra mim se quiser, bjos
       chrome.extension.getBackgroundPage().window.updateListener();
       $scope.$apply(function(){
-        $scope.message = "Salvo.";  
+        $scope.message = $rootScope.getMessage("urls_saved");
       });  
     })
   }
@@ -48,7 +48,7 @@ app.controller('IndexCtrl', ['$scope', function($scope){
   chrome.storage.sync.get('urls', function(data){
     // ok, confesso que isso foi feio.
     $scope.$apply(function(){
-      $scope.urls = data.urls || [];  
+      $scope.urls = data.urls || [];
     });
   });
 }]);

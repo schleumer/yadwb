@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- -->
+  <link rel="stylesheet" href="vendor/css/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/css/bootstrap-theme.min.css">
+  <!-- -->
+  <script type="text/javascript" src="vendor/js/underscore.min.js"></script>
+  <script type="text/javascript" src="vendor/js/qs.js"></script>
+  <!-- -->
+  <script type="text/javascript" src="js/block.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="text-center">
+      <div id="message"></div>
+      <div class="text-center">
+        <div id="donate_message"></div>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_s-xclick" />
+          <input type="hidden" name="hosted_button_id" value="WDWSUJWEAGPJE" />
+          <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online." />
+          <img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

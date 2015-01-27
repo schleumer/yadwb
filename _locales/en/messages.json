@@ -1,4 +1,10 @@
 {
+  "extName": {
+    "message": "Don't Waste Time"
+  },
+  "extDescription": {
+    "message": "Don't Waste Time helps you to not engage in distractive websites"
+  },
   "index_alert": {
     "message": "Attention: triple check urls before save, you have been warned. Triple check urls before save, you have been warned. Triple check urls before save, you have been warned trice."
   },
@@ -6,9 +12,36 @@
     "message": "Save"
   },
   "index_more": {
-    "message": "More"
+    "message": "Add URL"
+  },
+  "urls_saved": {
+    "message": "Saved"
   },
   "url_match_docs": {
-    "message": "You should follow these <a target=\"_blank\" href=\"https://developer.chrome.com/extensions/match_patterns\">standards</a>"
+    "message": "You should follow these <a target=\"_blank\" href=\"https://developer.chrome.com/extensions/match_patterns\">standards for filtering</a>"
+  },
+  "default_waste_message": {
+    "message": "<h4 style=\"font-size:40px;line-height:60px;\">You browsed into <br /><b >:url:</b></br /> and you think you got time to navigate<br /> in this website?</h4>"
+  },
+  "waste_message_info": {
+    "message": "Write <b>:url:</b> it will be replaced into website url that you visited."
+  },
+  "waste_message_save_button": {
+    "message": "Save Text"
+  },
+  "waste_message_header": {
+    "message": "Write a cute message:"
+  },
+  "waste_message_saved": {
+    "message": "Text Saved"
+  },
+  "clean_settings": {
+    "message": "Reset Settings"
+  },
+  "clean_settings_sure": {
+    "message": "Are you sure?"
+  },
+  "donate_message": {
+    "message": "Did you liked my work? <br /> Gimme some bucks to coffee:"
   }
 }

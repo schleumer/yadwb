@@ -1,14 +1,15 @@
 {  
   "manifest_version": 2,
-  "name":"Stop Procrastinating",
+  "name":"__MSG_extName__",
   "version":"0.0.1",
-  "description":"Stop Procrastinating helps you to not engage in distractive websites",
+  "description":"__MSG_extDescription__",
   "default_locale": "en",
   "author":"Wesley Schleumer de Góes",
+  "options_page": "settings.html",
   "icons": { 
-    "16": "icon128.png",
-    "48": "icon128.png",
-    "128": "icon128.png"
+    "16": "images/icon128.png",
+    "48": "images/icon128.png",
+    "128": "images/icon128.png"
   },
   "background": {
     "persistent": true,
@@ -17,7 +18,7 @@
   "browser_action": {
     "default_title": "unicode chars",
     "default_popup": "popup.html",
-    "default_icon": "icon128.png"
+    "default_icon": "images/icon128.png"
   },
   "permissions": [
     "storage",
