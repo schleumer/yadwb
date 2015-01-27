@@ -1,1 +1,14 @@
-This extension is made public under the sodaware license: if you like it you should buy the author a Soda when you meet him.
+THE HUGWARE LICENSE
+
+LICENSE
+
+If there is no other license you can do whatever you want with this while you
+retain the attribution to the author.
+
+HUGS
+
+The author spent time to make this software so please show some gratitude,
+in any form. A hug, a tweet, a beer on a conference or just a plain old email.
+Your choice.
+
+Less hate, more hugs.
